@@ -1,0 +1,44 @@
+
+header, main, nav, article, section, aside, figure, figcaption,  footer, video, audio{
+    display: block;
+}
+*{
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    line-height: 1.5;
+    color: $text-color;
+    vertical-align: baseline;
+
+}
+html{
+    background-color: $background;
+    font-size: 62.5%;
+}
+body{
+    line-height: 1.5;
+    max-width: 960px;
+    min-width: 330px;
+    margin: 0 auto;
+    
+    font-size: 1.8rem;
+    font-family: $font-body, sans-serif;
+    background-color: $white;
+}
+
+p{
+    padding-top: .3em;
+}
+a{
+    color: $link;
+    &:visited{
+    color: $visitedLink;
+    }
+    &:hover {
+        color: $hoverLink;
+    }
+    &:active{
+        color: $activeLink;
+    }
+}

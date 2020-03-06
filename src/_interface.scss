@@ -1,0 +1,52 @@
+$roundness: 10px 0 10px 0;
+%btn{
+    display: inline-block;
+    padding: 6px 12px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    font-family: $font-headings;
+    user-select: none;
+    color: $background;
+}
+
+// using maps(key-value pairs) and flow content(@each) to create classes for .btn-color
+$color-btns: (
+    varsity: $text-color,
+    junior: $red,
+    frosh: $blue,
+    trainees: $purple
+);
+@each $name, $value in $color-btns{
+    .btn-#{$name} {
+        @extend %btn;    //use of extend to extend classes
+        background-color: $value;
+    }
+}
+
+//image grid using mixin
+.grid{
+    margin-bottom: 15px;
+    @include clearfix; //use of custom mixin
+    .item{
+        float: left;
+        //on small screen 2col grid, med screen 3col grid, large screen 5col grid
+        @include imageGrid(2, 2%);
+        
+        @include break(500px){ //content specified here will be displayed because of @content in mixin
+            @include imageGrid(3, 2%); 
+        }
+        @include break(720px){ //content specified here will be displayed because of @content in mixin
+            @include imageGrid(5, 2%);
+        }
+    }
+    img{
+        display: block;
+        border-radius: nth($roundness, 1); // list function to extract the first value from the list to set to 10 px
+        max-width: 100%;
+        height: auto;
+    }
+}

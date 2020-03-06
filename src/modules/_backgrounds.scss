@@ -1,0 +1,23 @@
+.background{
+    color: $background;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+       > h1{
+            color: $wvYellow;
+            font-family: $font-headings;
+            font-size: 3rem;
+        }
+}
+.jumbotron{
+    margin-top: 0;
+    @include backImage("../images/team-sm.jpg");
+    @include break(500px){ 
+        @include backImage("../images/team-md.jpg");
+      }
+    @include break(720px){ 
+        @include backImage("../images/team-lg.jpg");
+    }
+}

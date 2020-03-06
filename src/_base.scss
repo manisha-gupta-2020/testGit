@@ -1,0 +1,59 @@
+footer {
+        color: $background;
+        margin-top: 20px;
+        padding: 15px 0;
+        background-color: darken($dark-gray, 15%); //use of color modifier
+        text-align: center;
+}
+.container{
+    width: 100%;
+    margin: 0 auto;
+}
+//list with heading colors
+$heading-colors: $blue2, $darkpurple, $wvYellow ,$purple,  $green,  $orange;
+
+// use of flow content(for loop) and built in sass function (nth) to assign colors to various headings.
+@for $item from 1 through length($heading-colors){
+    h#{$item} {         //the #represents the variable
+        color: nth($heading-colors, $item);
+        padding: .3em 0;
+        margin: 0;
+    }
+}
+
+
+.contentWrapper{
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    @include break(720px){ 
+        flex-direction:row;
+        flex-flow: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    main{
+        flex: 95%;
+        padding: 0 .5rem;
+        @include break(720px){ 
+            flex: 65.6666% ; 
+        }
+    }
+    aside{
+        flex: 95%;
+        padding-top: .5em;
+        @include break(720px){ 
+            flex: 32.3333% ; 
+        }
+    }
+    // .container#buttons{
+    //     display: flex;
+    //     flex-direction: column;
+    //     @include break(100px, 500px){ 
+    //         display: flex;
+    //         flex-direction: column;
+    //     }
+    // }
+
+        
+}

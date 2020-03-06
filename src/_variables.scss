@@ -1,0 +1,30 @@
+//load fonts  is a hidden comment  
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hepta+Slab|Roboto&display=swap');
+/*! defining variables is a forced comment*/
+$white:              #fff;
+$wvYellow:           #dcc81c;
+$dark-gray:          #444;
+$background:         #EEE8D6; //beige 
+$text-color:         #022933;
+$red:                #D14348;
+$blue:               #0076A3; 
+$blue2:              #0c4c99;
+$darkpurple:         #660066;
+$yellow:             #FFBA00;
+$green:              #548C27;
+$purple:             #b366ff;
+$orange:             #f39856;
+
+$navLink:            $white;
+$link:              rgb(0, 0, 255);
+$hoverLink:          $wvYellow;
+$activeLink:         $purple;
+$visitedLink:        transparentize($purple, .8);
+$font-body:          'open sans';
+
+$font-headings: Oswald, roboto, sans-serif; //example of list in sass
+//  colors for media
+$color-item-border: $dark-gray;
+$color-media-head: $blue;
+$color-even-cells:  transparentize($yellow, .7); //alternate row colors for table
